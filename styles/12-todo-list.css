@@ -1,63 +1,53 @@
-p{
+/* Base styles */
+p {
   font-family: arial;
 }
-.todo-input
-{
-  padding: 8px 19px;
-  padding-left: 6px;
+
+.todo-input {
+  padding: 8px 10px;
   font-size: 15px;
   margin-right: 5px;
 }
-.todo-input-date
-{
-  padding: 7px ;
-  padding-left: 6px;
+
+.todo-input-date {
+  padding: 7px;
   font-size: 15px;
 }
-.Add-button
-{
+
+.Add-button {
   margin-left: 3px;
   background-color: green;
-  padding: 10px 35px;
+  padding: 10px 20px;
   color: white;
   border: none;
   cursor: pointer;
 }
-.todo-grid,.label
-{
+
+.todo-grid,
+.label {
   display: grid;
-  grid-template-columns:210px 145px 95px ;
+  grid-template-columns: 210px 145px 95px;
   column-gap: 10px;
   row-gap: 10px;
   align-items: center;
-  
-
 }
-.todo-grid
-{
+
+.todo-grid {
   margin-top: 20px;
   font-size: 15px;
   font-family: arial;
   margin-bottom: 20px;
 }
-.delete
-{
-  background-color:  darkred;
+
+.delete {
+  background-color: darkred;
   border: none;
   color: white;
   height: 40px;
   width: 95px;
   cursor: pointer;
 }
-/* body {
-  background-image: url('background.jpg');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  height: 100vh;
-  margin: 0;
-  overflow: hidden;
-} */
+
 body {
   background-image: url("background.jpg");
   background-size: cover;
@@ -72,20 +62,44 @@ body {
   align-items: center;
 }
 
-.center{
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers horizontally */
-  justify-content: center; 
-  /* height: 100vh; */
-}
 .center {
-  background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  background: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 10px;
   max-width: 500px;
   width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
+}
+
+/* Responsive styles for phones */
+@media (max-width: 768px) {
+  .todo-grid,
+  .label {
+    grid-template-columns: 1fr; /* Make grid items stack */
+    row-gap: 15px; /* Increase spacing between rows */
+  }
+
+  .Add-button,
+  .delete {
+    width: 100%; /* Full-width buttons */
+    padding: 12px;
+    margin-top: 10px; /* Add spacing above/below */
+  }
+
+  .todo-input,
+  .todo-input-date {
+    width: 100%; /* Full-width inputs */
+    margin-bottom: 10px; /* Add spacing between inputs */
+  }
+
+  .center {
+    padding: 15px;
+    max-width: 90%; /* Reduce the width to fit small screens */
+  }
+
+  body {
+    padding: 10px; /* Prevent content from touching screen edges */
+  }
 }
 
